@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Annotation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!--    <div class="image-container">-->
+<!--&lt;!&ndash;        <img id="image1" src="" alt="Original image">&ndash;&gt;-->
+<!--&lt;!&ndash;        <img id="image2" src="" alt="AIGC image">&ndash;&gt;-->
+<!--        <div>-->
+<!--            <img id="image1" src="" alt="Image 1">-->
+<!--            <label>Original image</label>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <img id="image2" src="" alt="Image 2">-->
+<!--            <label>AIGC image</label>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div id="imageContainer">
+        <div class="imageBox">
+            <label class="imageTitle" id="title1">Original image</label>
+            <img id="image1" src="" alt="Image 1">
+        </div>
+        <div class="imageBox">
+            <label class="imageTitle" id="title2">AIGC image</label>
+            <img id="image2" src="" alt="Image 2">
+        </div>
+    </div>
+    <div class="controls">
+<!--        <label for="pass">Pass:</label>-->
+<!--        <select id="pass" name="pass">-->
+<!--            <option value="1">1</option>-->
+<!--            <option value="0">0</option>-->
+<!--        </select>-->
+
+<!--        <label for="gsb">GSB:</label>-->
+<!--        <select id="gsb" name="gsb">-->
+<!--            <option value="G">G</option>-->
+<!--            <option value="S">S</option>-->
+<!--            <option value="B">B</option>-->
+<!--        </select>-->
+
+         <div id="optionsContainer">
+            <div class="optionBox">
+                <label class="optionTitle">AIGC image is Pass:</label>
+                <button id="pass0" class="passButton" onclick="togglePass(0)">0</button>
+                <button id="pass1" class="passButton" onclick="togglePass(1)">1</button>
+            </div>
+
+            <div class="optionBox">
+                <label class="optionTitle">AIGC vs Original image: GSB:</label>
+                <button id="gs" class="gsbButton" onclick="toggleGSB('G')">G</button>
+                <button id="sb" class="gsbButton" onclick="toggleGSB('S')">S</button>
+                <button id="bb" class="gsbButton" onclick="toggleGSB('B')">B</button>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="prevBtn" onclick="prevImage()">Previous</button>
+            <button id="nextBtn" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+    <div>
+        <input type="number" id="rowNumber" placeholder="Jump to row">
+        <button onclick="jumpToRow()">Go</button>
+    </div>
+    <div class="file-input">
+        <input type="file" id="csvFile" accept=".csv">
+        <button onclick="loadCSVData()">Load CSV</button>
+        <button onclick="saveCSVData()">Save and Download</button>
+    </div>
+
+    <p id="message"></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
